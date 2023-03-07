@@ -12,7 +12,7 @@ Before you begin, make sure you have the following installed:
 
 Check out the mentorship branch by running `git checkout mentorship`.
 
-Navigate to the Firebase project directory and run the setup script: `cd .\firebase-course\ && npm run setup`
+Navigate to the Firebase project directory `firebase-course` and run the setup script: `npm run setup`
 
 Follow the prompts in the Firebase CLI to choose the features you want to set up for this directory. Use the following answers::
 
