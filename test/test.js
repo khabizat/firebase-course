@@ -1,17 +1,14 @@
 const assert = require('assert');
 const firebase = require('@firebase/testing');
-const { QuerySnapshot } = require('@google-cloud/firestore');
+const fs = require('fs');
 
 const MY_PROJECT_ID = 'emulator-rules';
 const myId = 'user_abc';
 const theirId = 'user_xyz';
-const modId = 'user_mod';
 const myAuth = { uid: myId, email: 'abc@gmail.com' };
-const modAuth = { uid: modId, email: 'mod@gmail.com', isModerator: true };
 
 // Enforce firestore rules hot update in emulators
 before(async () => {
-  const fs = require('fs');
   await firebase.loadFirestoreRules({
     projectId: MY_PROJECT_ID,
     rules: fs.readFileSync('./firestore.rules', 'utf8'),
