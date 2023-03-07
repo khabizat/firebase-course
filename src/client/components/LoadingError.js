@@ -8,16 +8,11 @@ const options = {
   },
   error: {
     h3: '⚠️Oops',
-    p: 'Can\'t fetch the data. Open the console to see details',
+    p: "Can't fetch the data. Open the console to see details",
   },
 };
 
-const LoadingError = ({
-  data,
-  loading,
-  error,
-  children,
-}) => {
+const LoadingError = ({ data, loading, error, children }) => {
   if (error) console.error(error);
 
   return (
@@ -44,7 +39,7 @@ const LoadingError = ({
         </Card>
       )}
 
-      {data && children }
+      {data && children}
     </>
   );
 };

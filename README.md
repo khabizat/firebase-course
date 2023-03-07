@@ -2,67 +2,43 @@
 
 ## Prerequisites
 
-You will need to have the following installed to use this course: 
+Before you begin, make sure you have the following installed:
 
-* [Node](https://nodejs.org/en/)
-* [Java DK](https://docs.oracle.com/en/java/javase/16/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A)
-* [Firebase CLI](https://github.com/firebase/firebase-tools)
+- [Node](https://nodejs.org/en/) (version 16 or later)
+- [Java DK](https://docs.oracle.com/en/java/javase/16/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A)
+- [Firebase CLI](https://github.com/firebase/firebase-tools)
 
 ## Setup Guide
 
-### Setting Up React
+Check out the mentorship branch by running `git checkout mentorship`.
 
-Checkout this branch:
-```git checkout mentorship```
+Navigate to the Firebase project directory and run the setup script: `cd .\firebase-course\ && npm run setup`
 
-Install the dependencies:
-```npm ci```
-
-Do the same in the `/functions` folder to use Firebase cloud functions:
-```cd functions && npm ci```
-
-At this point, the client side should work. You can launch it with:
-```cd .. && npm start``` 
-
-### Setting Up Firebase
-
-You may have noticed that data isn't yet being fetched from Firebase. We need to connect our code to Firebase to make it work.
-
-> In this course, we will be using a demo Firebase project. If you want to know how to connect a real project, see [React and Firebase Starter docs](https://github.com/codebusters-ca/react-firebase-starter#react--firebase-starter).
-
-In your code editor, leave the client app running and open a new terminal. Log into Firebase CLI:
-```cd .\firebase-course\ && firebase login```
-
-Start connecting your Firebase project: ```firebase init```
-
-To choose the features we will be using, choose the following answers when prompted by the CLI:
+Follow the prompts in the Firebase CLI to choose the features you want to set up for this directory. Use the following answers::
 
 ```
+Enter the Project ID of the project you want to use:(Enter the project ID you just created)
+
 * ? Which Firebase features do you want to set up for this directory?
   Firestore
-  Functions
   Emulators
 
-* First, let's associate this project directory with a Firebase project.
-? Please select an option:
-  Don't set up a default project
-  
 * ? What file should be used for Firestore Rules? firestore.rules
 ? File firestore.rules already exists. Do you want to overwrite it with the Firestore Rules from the Firebase Console? No
 
 ? What file should be used for Firestore indexes? firestore.indexes.json
 ? File firestore.indexes.json already exists. Do you want to overwrite it with the Firestore Indexes from the Firebase Console? No
 
-? File functions/package.json already exists. Overwrite? No
-
 ? Which Firebase emulators do you want to set up?
   Authentication Emulator
-  Functions Emulator
   Firestore Emulator
+
+? Would you like to download the emulators now? Yes
 ```
 
-Now that we've initialized the local Firebase directory, we can start using the demo project. Run Firebase Emulators with `npm run emulators` at the root directory. 
-If your client app is still running, you will see `Hello from Firestore Emulator` appear there.
+Now that we've initialized the local Firebase directory, we can start using the project. Run Firebase Emulators with npm run emulators.
+In another terminal, launch the app with npm start. The app will run on localhost:3000.
+If the setup process was successful, you will see `Hello from Firestore Emulator` in the app.
 
 Congratulations! The setup process is now complete.
 

@@ -52,7 +52,7 @@ describe('Setup', () => {
     await firebase.assertSucceeds(testDoc.update({ content: 'after' }));
   });
 
-  it('Don\'t allow a user to edit somebody else\'s document', async () => {
+  it("Don't allow a user to edit somebody else's document", async () => {
     const docId = 'doc123';
     const admin = getAdminFirestore();
     await admin

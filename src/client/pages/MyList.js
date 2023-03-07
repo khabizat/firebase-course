@@ -13,7 +13,10 @@ const MyList = () => {
     <>
       <Helmet>
         <title>My List - React & Firebase Starter</title>
-        <meta name="description" content="This is a default page from React & Firebase Starter. Change this content by editing MyList.js." />
+        <meta
+          name="description"
+          content="This is a default page from React & Firebase Starter. Change this content by editing MyList.js."
+        />
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
 
@@ -29,7 +32,6 @@ const MyList = () => {
         </Card>
 
         <TodoForm />
-
       </main>
     </>
   );

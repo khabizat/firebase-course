@@ -6,10 +6,7 @@ const Todo = ({ item }) => {
   // const [checked, setChecked] = useState(item.done);
 
   const handleCheckbox = () => {
-    updateTodo(
-      item.id,
-      { done: !item.done },
-    );
+    updateTodo(item.id, { done: !item.done });
   };
 
   const handleDelete = () => {
@@ -20,7 +17,10 @@ const Todo = ({ item }) => {
     <fieldset>
       <legend className="sr-only">To-do item</legend>
       <div className="flex justify-between items-center my-2 h-5">
-        <label htmlFor="item" className="flex items-center text-sm text-gray-700">
+        <label
+          htmlFor="item"
+          className="flex items-center text-sm text-gray-700"
+        >
           <input
             id={item.id}
             name="item"

@@ -9,7 +9,7 @@ const Home = () => {
   const db = firebase.firestore();
   const [value, loading, error] = useDocumentData(
     db.collection('test').doc('testId'),
-    { snapshotListenOptions: { includeMetadataChanges: true } },
+    { snapshotListenOptions: { includeMetadataChanges: true } }
   );
 
   if (error) console.error(new Error(JSON.stringify(error)));
@@ -18,7 +18,10 @@ const Home = () => {
     <>
       <Helmet>
         <title>React & Firebase Starter</title>
-        <meta name="description" content="This is a default page from React & Firebase Starter. Change this content by editing App.js." />
+        <meta
+          name="description"
+          content="This is a default page from React & Firebase Starter. Change this content by editing App.js."
+        />
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <main>
@@ -41,7 +44,8 @@ const Home = () => {
                   </p>
                   <p className="font-bold text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl">
                     {loading && 'Loading...'}
-                    {(error || (!loading && !value)) && 'Nope. You might want to check out the docs for project setup.'}
+                    {(error || (!loading && !value)) &&
+                      'Nope. You might want to check out the docs for project setup.'}
                     {value && `Yep! ${value.testValue}`}
                   </p>
                   <div className="mt-10 sm:mt-12">
