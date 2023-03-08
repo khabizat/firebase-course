@@ -47,7 +47,8 @@ Congratulations! The setup process is now complete.
 If you encounter the following issue during the setup process:
 
 ```
-It looks like you haven't used Cloud Firestore in this project before. Go to https://console.firebase.google.com/project/(yourprojectid)/firestore to create your Cloud Firestore database
+It looks like you haven't used Cloud Firestore in this project before. 
+Go to https://console.firebase.google.com/project/(yourprojectid)/firestore to create your Cloud Firestore database
 ```
 
 Please follow these steps to resolve the issue:
