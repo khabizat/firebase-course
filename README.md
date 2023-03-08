@@ -42,7 +42,7 @@ If the setup process was successful, you will see `Hello from Firestore Emulator
 
 Congratulations! The setup process is now complete.
 
-## Troubleshoot
+## Troubleshooting
 
 If you encounter the following issue during the setup process:
 
