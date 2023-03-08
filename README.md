@@ -42,6 +42,21 @@ If the setup process was successful, you will see `Hello from Firestore Emulator
 
 Congratulations! The setup process is now complete.
 
+## Troubleshoot
+
+If you encounter the following issue during the setup process:
+
+```
+It looks like you haven't used Cloud Firestore in this project before. Go to https://console.firebase.google.com/project/(yourprojectid)/firestore to create your Cloud Firestore database
+```
+
+Please follow these steps to resolve the issue:
+
+- In the Firebase Dashboard, go to Project Settings -> General
+- Set "Default GCP resource location" again.
+
+This should resolve the issue
+
 ## Contribute
 
 🚧 This tutorial is a work in progress 🚧 We ❤️ feedback and help from fellow devs! If you found a bug, create an [issue](https://github.com/codebusters-ca/firebase-course/issues/new?labels=bug) or send us a [pull request](https://github.com/codebusters-ca/firebase-course/compare).

@@ -48,12 +48,47 @@ const getKeypress = () => {
 
 (async () => {
   logWithFormat(
-    "To use React and Firebase Starter, you'll need access to a Firebase project.\nIf you haven't created a project yet, go to https://console.firebase.google.com, click 'Add project'\nand follow the on-screen instructions to create one. Then, enable Firestore Database and Authentication via Google.\nWhen you're ready, press any key to continue. "
+    'To use Next and Firebase Starter, you will need access to a Firebase project.'
   );
 
-  await getKeypress();
+  const hasFirebaseProject = await getUserInput(
+    'Do you have an existing Firebase Project set up in the Firebase Console? (Y/N)'
+  );
 
-  logWithFormat('Installing main dependencies...');
+  if (hasFirebaseProject.toLowerCase() === 'n') {
+    logWithFormat(
+      "Let's get you set up with a new project. Follow these steps:"
+    );
+    logWithFormat(
+      '(1/5) Head to https://console.firebase.google.com\nPress any key to go to the next step'
+    );
+    await getKeypress();
+
+    logWithFormat(
+      '(2/5) Add a new project\nPress any key to go to the next step'
+    );
+    await getKeypress();
+
+    logWithFormat(
+      '(3/5) Enable Authentication\nPress any key to go to the next step'
+    );
+    await getKeypress();
+
+    logWithFormat(
+      '(4/5) Enable Firestore Database\nPress any key to go to the next step'
+    );
+    await getKeypress();
+
+    logWithFormat(
+      '(5/5)Register a new web app by going to Project Settings --> Add App\nWhen you are done, press any key to continue.'
+    );
+    await getKeypress();
+  }
+
+  logWithFormat(
+    'Now sit back and relax while we install the dependencies for you🍹'
+  );
+  logWithFormat('(1/1) Installing main dependencies...');
   runCmd('npm', ['ci'], mainPath);
   logWithFormat('Dependencies installed!');
   logWithFormat('Firebase login...');
@@ -62,20 +97,25 @@ const getKeypress = () => {
   runCmd('firebase', ['projects:list']);
 
   const projectId = await getUserInput(
-    'Enter the Project ID of the project you want to use: '
+    'Enter the Project ID of the Firebase project you want to use: '
   );
 
   runCmd('firebase', ['use', projectId]);
   logWithFormat('Saving your project config to a local .env file...');
   runCmd('node', ['scripts/configTool.js']);
+  logWithFormat('You are about to initialize a local Firebase directory.');
   logWithFormat(
-    "You are about to initialize a local Firebase directory.\nThis project is set up to use Firestore, Functions, and Emulators. Make sure you choose these options when prompted by Firebase CLI.\nTo take advantage of this Starter's features, choose not to overwrite existing files when asked by the CLI.\nPress any key to continue. "
+    "☝️ This project is set up to use Firestore and Emulators. Make sure you choose these options when prompted by Firebase CLI.\n⚠️ To take advantage of this Starter's features, choose not to overwrite existing files when asked by the CLI."
   );
+  logWithFormat('Press any key to continue.');
 
   await getKeypress();
 
   logWithFormat('Initializing Firebase directory for your project...');
   runCmd('firebase', ['init']);
 
+  logWithFormat(
+    'Setup complete🎉\nTo start local development:\n- Start Firebase emulators with: npm run emulators\n- In another terminal, start the app with: npm run dev\nHappy coding!'
+  );
   process.exit();
 })();
