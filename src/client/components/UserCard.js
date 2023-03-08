@@ -28,7 +28,6 @@ const UserCard = ({ userDoc, isCurrentUser }) => {
           <div className="sm:col-span-3 text-center sm:text-left">
             <div className="space-y-4">
               <div className="text-lg leading-6 font-medium space-y-1">
-
                 <h3>
                   {userDoc.displayName}
                   {isCurrentUser && (
@@ -37,8 +36,9 @@ const UserCard = ({ userDoc, isCurrentUser }) => {
                     </span>
                   )}
                 </h3>
-                <p className="text-indigo-600">{userDoc.isAdmin ? 'Admin' : 'User'}</p>
-
+                <p className="text-indigo-600">
+                  {userDoc.isAdmin ? 'Admin' : 'User'}
+                </p>
               </div>
             </div>
           </div>

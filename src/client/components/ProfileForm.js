@@ -28,22 +28,24 @@ const ProfileForm = ({ userDoc, isCurrentUser, adminMode }) => {
   };
 
   return (
-    <form
-      onSubmit={(e) => handleSubmit(e)}
-      className="space-y-8"
-    >
+    <form onSubmit={(e) => handleSubmit(e)} className="space-y-8">
       <div className="space-y-8">
         <div>
-          <h3 className="text-lg leading-6 font-medium text-gray-900">Profile</h3>
+          <h3 className="text-lg leading-6 font-medium text-gray-900">
+            Profile
+          </h3>
           <p className="mt-1 text-sm text-gray-500">
-            This information will be displayed publicly so
-            be careful what you share.
+            This information will be displayed publicly so be careful what you
+            share.
           </p>
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
           <div className="sm:col-span-4">
-            <label htmlFor="displayName" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="displayName"
+              className="block text-sm font-medium text-gray-700"
+            >
               Name
             </label>
             <div className="mt-1 flex rounded-md shadow-sm">
@@ -59,7 +61,10 @@ const ProfileForm = ({ userDoc, isCurrentUser, adminMode }) => {
           </div>
 
           <div className="sm:col-span-6">
-            <label htmlFor="about" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="about"
+              className="block text-sm font-medium text-gray-700"
+            >
               About
             </label>
             <div className="mt-1">
@@ -79,11 +84,9 @@ const ProfileForm = ({ userDoc, isCurrentUser, adminMode }) => {
 
       {!(isCurrentUser || adminMode) && (
         <p className="mt-6 text-sm text-gray-500">
-          ⚠️You are not authorized to edit this profile,
-          but we left this form here to demonstrate
-          how Firestore security rules protect the data.
-          Try saving some changes and open the console
-          to see the error message.
+          ⚠️You are not authorized to edit this profile, but we left this form
+          here to demonstrate how Firestore security rules protect the data. Try
+          saving some changes and open the console to see the error message.
         </p>
       )}
 

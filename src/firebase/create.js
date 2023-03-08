@@ -1,9 +1,6 @@
 import toast from 'react-hot-toast';
 import firebase from './clientApp';
-import {
-  cleanData,
-  TODOS,
-} from './utility';
+import { cleanData, TODOS } from './utility';
 
 async function create(collection, data) {
   const db = firebase.firestore();

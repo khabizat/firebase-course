@@ -1,10 +1,6 @@
 import toast from 'react-hot-toast';
 import firebase from './clientApp';
-import {
-  cleanData,
-  TODOS,
-  USERS,
-} from './utility';
+import { cleanData, TODOS, USERS } from './utility';
 
 async function update(path, data) {
   const db = firebase.firestore();

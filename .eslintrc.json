@@ -1,34 +1,33 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "mocha": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb"
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "ignorePatterns": ["dist/*.js"],
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreComments": true,
+        "ignorePattern": "^\\s*<.*>\\s*$"
+      }
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "ignorePatterns": ["dist/*.js"],
-    "rules": {
-        "max-len": ["error", {
-            "ignoreStrings": true,
-            "ignoreTemplateLiterals": true,
-            "ignoreComments": true,
-            "ignorePattern": "^\\s*<.*>\\s*$"
-        }],
-        "no-console": "off",
-        "react/prop-types": 0,
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "linebreak-style": [0, "error", "windows"],
-        "indent": ["error", 2]
-    }
+    "no-console": "off",
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "linebreak-style": [0, "error", "windows"],
+    "indent": ["error", 2]
+  }
 }

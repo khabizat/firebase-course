@@ -11,6 +11,12 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    match /test_documents/{id} {
+      allow update: if (request.auth != null &&
+      resource.data.authorId == request.auth.uid);
+    }
+
     // Add new rules here
+   
   }
 }

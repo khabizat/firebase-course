@@ -1,8 +1,6 @@
 import toast from 'react-hot-toast';
 import firebase from './clientApp';
-import {
-  TODOS,
-} from './utility';
+import { TODOS } from './utility';
 
 async function remove(collection, id) {
   const db = firebase.firestore();

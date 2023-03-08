@@ -1,10 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import 'tailwindcss/tailwind.css';
 import { Toaster } from 'react-hot-toast';
@@ -27,26 +23,15 @@ const App = () => (
             <Home />
           </Route>
 
-          <PrivateRoute
-            path="/my-list"
-            component={MyList}
-          />
+          <PrivateRoute path="/my-list" component={MyList} />
 
-          <PrivateRoute
-            path="/users"
-            exact
-            component={Users}
-          />
+          <PrivateRoute path="/users" exact component={Users} />
 
-          <PrivateRoute
-            path="/users/:uid"
-            component={Profile}
-          />
+          <PrivateRoute path="/users/:uid" component={Profile} />
 
           <Route path="*">
             <NotFound />
           </Route>
-
         </Switch>
       </Layout>
       <Toaster />

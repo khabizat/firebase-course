@@ -13,18 +13,18 @@ const Users = () => {
   const { user } = useUser();
   const db = firebase.firestore();
 
-  const [userDocs, loading, error] = useCollectionData(
-    db.collection(USERS),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true },
-    },
-  );
+  const [userDocs, loading, error] = useCollectionData(db.collection(USERS), {
+    snapshotListenOptions: { includeMetadataChanges: true },
+  });
 
   return (
     <>
       <Helmet>
         <title>Users - React & Firebase Starter</title>
-        <meta name="description" content="This is a default page from React & Firebase Starter. Change this content by editing Users.js." />
+        <meta
+          name="description"
+          content="This is a default page from React & Firebase Starter. Change this content by editing Users.js."
+        />
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
 
@@ -35,11 +35,7 @@ const Users = () => {
           </h1>
         </Card>
 
-        <LoadingError
-          data={userDocs}
-          loading={loading}
-          error={error}
-        >
+        <LoadingError data={userDocs} loading={loading} error={error}>
           {!userDocs?.length ? (
             <Card>
               <p className="mt-2 max-w-xl text-sm text-gray-700">

@@ -16,15 +16,18 @@ const TodoForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmitting(true);
-    createTodo(item, user.uid)
-      .finally(() => {
-        setSubmitting(false);
-        setItem('');
-      });
+    createTodo(item, user.uid).finally(() => {
+      setSubmitting(false);
+      setItem('');
+    });
   };
 
   return (
-    <div className={`${isSubmitting ? 'opacity-50' : ''} bg-white shadow rounded-lg w-11/12 sm:w-6/12 mx-auto my-4 z-10 transition-all duration-300 ease-in-out`}>
+    <div
+      className={`${
+        isSubmitting ? 'opacity-50' : ''
+      } bg-white shadow rounded-lg w-11/12 sm:w-6/12 mx-auto my-4 z-10 transition-all duration-300 ease-in-out`}
+    >
       <div className="px-4 py-5 sm:p-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900">
           Add a new to-do item
@@ -54,7 +57,9 @@ const TodoForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`${isSubmitting ? 'opacity-80 cursor-not-allowed' : ''} mt-3 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm`}
+            className={`${
+              isSubmitting ? 'opacity-80 cursor-not-allowed' : ''
+            } mt-3 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm`}
           >
             Add
           </button>
