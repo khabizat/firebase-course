@@ -36,8 +36,8 @@ Enter the Project ID of the project you want to use:(Enter the project ID you ju
 ? Would you like to download the emulators now? Yes
 ```
 
-Now that we've initialized the local Firebase directory, we can start using the project. Run Firebase Emulators with npm run emulators.
-In another terminal, launch the app with npm start. The app will run on localhost:3000.
+Now that we've initialized the local Firebase directory, we can start using the project. Run Firebase Emulators with `npm run emulators`.
+In another terminal, launch the app with `npm start`. The app will run on `localhost:3000`.
 If the setup process was successful, you will see `Hello from Firestore Emulator` in the app.
 
 Congratulations! The setup process is now complete.
@@ -61,24 +61,24 @@ Please follow these steps to resolve the issue:
 ### Issue 2
 
 ```
-database: Port 4000 is not open on localhost, could not start Database Emulator.
+database: Port #### is not open on localhost, could not start Database Emulator.
 ```
 or
 ```
-Port 4000 is already in use 
+Port #### is already in use 
 ```
 
 For Linux/Mac OS run this command in the terminal:
 
 ```
-sudo lsof -i tcp:4000
+sudo lsof -i tcp:typePortnumberhere
 sudo kill -9 typeyourPIDhere
 ```
 
 On Windows:
 
 ```
-netstat -ano | findstr :4000
+netstat -ano | findstr :typePortnumberhere
 tskill typeyourPIDhere
 ```
 
