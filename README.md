@@ -4,7 +4,7 @@
 
 Before you begin, make sure you have the following installed:
 
-- [Node](https://nodejs.org/en/) (version 16 or later)
+- [Node](https://nodejs.org/en/) (version 16 is recommended)
 - [Java DK](https://docs.oracle.com/en/java/javase/16/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A)
 - [Firebase CLI](https://github.com/firebase/firebase-tools)
 
@@ -44,7 +44,9 @@ Congratulations! The setup process is now complete.
 
 ## Troubleshooting
 
-If you encounter the following issue during the setup process:
+If you encounter the following issues during the setup process:
+
+### Issue 1
 
 ```
 It looks like you haven't used Cloud Firestore in this project before. 
@@ -56,7 +58,29 @@ Please follow these steps to resolve the issue:
 - In the Firebase Dashboard, go to Project Settings -> General
 - Set "Default GCP resource location" again.
 
-This should resolve the issue
+### Issue 2
+
+```
+database: Port 4000 is not open on localhost, could not start Database Emulator.
+```
+or
+```
+Port 4000 is already in use 
+```
+
+For Linux/Mac OS run this command in the terminal:
+
+```
+sudo lsof -i tcp:4000
+sudo kill -9 typeyourPIDhere
+```
+
+On Windows:
+
+```
+netstat -ano | findstr :4000
+tskill typeyourPIDhere
+```
 
 ## Contribute
 
