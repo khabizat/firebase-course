@@ -17,6 +17,12 @@ service cloud.firestore {
     }
 
     // Add new rules here
-   
+
+    match /todos/{todoId} {
+      // Allow authenticated users to view, delete, and update their own todo items
+      allow read, delete, update: if(request.auth != null && 
+      request.auth.uid == resource.data.uid);   
+    }
+
   }
 }
