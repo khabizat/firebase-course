@@ -28,7 +28,7 @@ service cloud.firestore {
       request.auth.uid == request.resource.data.uid);  
     }
 
-    match /users/{iserId} {
+    match /users/{userId} {
       // Allow authenticated users create profiles and view profiles of other users
       allow read, create: if(request.auth != null);
 
