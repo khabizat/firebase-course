@@ -35,6 +35,12 @@ const Profile = () => {
     }
   }, []);
 
+  // Authenticated user with admin status changes the admin status of another user
+  const handleAdminStatusUpdate = (event) =>{
+    event.preventDefault();
+    updateUser(userDoc.uid, {isAdmin: !userDoc.isAdmin});
+  }
+
   return (
     <main>
       <Card>
@@ -53,6 +59,20 @@ const Profile = () => {
                 adminMode={adminMode}
               />
             </Card>
+            {/* Checkbox to update admin status */}
+            {adminMode && userDoc.uid !== user.uid && (
+              <Card>
+                <label className="block mt-4">
+                  <input 
+                    type="checkbox"
+                    checked={userDoc ? userDoc.isAdmin : false}
+                    onChange={handleAdminStatusUpdate}
+                    className="form-checkbox h-5 w-5 text-green-500"
+                  />
+                  <span className='ml-2 text-gray-700'>Admin</span>
+                </label>
+              </Card>
+            )}
           </>
         )}
       </LoadingError>
