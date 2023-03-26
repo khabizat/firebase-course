@@ -67,8 +67,8 @@ const Profile = () => {
                     type="checkbox"
                     checked={userDoc ? userDoc.isAdmin : false}
                     onChange={handleAdminStatusUpdate}
-                    className="form-checkbox h-5 w-5 text-green-500"
-                  />
+                    className="mr-3 focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                    />
                   <span className='ml-2 text-gray-700'>Admin</span>
                 </label>
               </Card>
