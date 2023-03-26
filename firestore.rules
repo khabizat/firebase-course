@@ -31,6 +31,10 @@ service cloud.firestore {
     match /users/{iserId} {
       // Allow authenticated users create profiles and view profiles of other users
       allow read, create: if(request.auth != null);
+
+      // Allow users edit their own profile
+      allow update: if(request.auth != null &&
+      request.auth.uid == resource.data.uid);
     }
   }
 }
