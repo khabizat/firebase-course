@@ -62,6 +62,12 @@ const Profile = () => {
             {/* Checkbox to update admin status */}
             {adminMode && userDoc.uid !== user.uid && (
               <Card>
+                <h3 className="text-lg leading-6 font-medium text-gray-900">
+                Admin Tools
+                </h3>
+                <p className="mt-1 text-sm text-gray-500">
+                Click checkbox to change {userDoc.displayName}'s admin status.
+                </p>
                 <label className="block mt-4">
                   <input 
                     type="checkbox"
@@ -69,7 +75,7 @@ const Profile = () => {
                     onChange={handleAdminStatusUpdate}
                     className="mr-3 focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
                     />
-                  <span className='ml-2 text-gray-700'>Admin</span>
+                  <span className="text-sm font-medium text-gray-700">Admin</span>
                 </label>
               </Card>
             )}
